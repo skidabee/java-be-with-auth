@@ -1,4 +1,4 @@
-package exception;
+package io.taxventures.exception;
 
 public class DuplicatedUsernameException extends ApplicationException{
     public DuplicatedUsernameException() {

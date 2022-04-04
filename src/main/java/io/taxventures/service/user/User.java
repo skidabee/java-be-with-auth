@@ -14,11 +14,12 @@ public class User implements UserDetails {
     @Id final String id;
     @Indexed(unique=true) final String email;
     final String password;
+
     final UserRole userRole;
+
     final Boolean isAdmin;
     final Boolean locked;
     final Boolean enabled;
-
     public User(String id,
                 String email,
                 String password,
@@ -52,6 +53,10 @@ public class User implements UserDetails {
         return null;
     }
 
+    public UserRole getUserRole() {
+        return userRole;
+    }
+
     @Override
     public String getPassword() {
         return password;
@@ -80,6 +85,10 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() {
         return enabled;
+    }
+
+    public String getId() {
+        return id;
     }
 
     @Override

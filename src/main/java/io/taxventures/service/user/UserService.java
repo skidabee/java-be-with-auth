@@ -1,10 +1,9 @@
 package io.taxventures.service.user;
 
-import exception.DuplicatedUsernameException;
+import io.taxventures.exception.DuplicatedUsernameException;
 import io.taxventures.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -32,7 +31,7 @@ public class UserService implements UserDetailsService {
                 .orElseThrow(() -> new UsernameNotFoundException("User with provided email cannot be found."));
     }
 
-    User registerUser(String username, String password) throws DuplicatedUsernameException {
+    public User registerUser(String username, String password) throws DuplicatedUsernameException {
         if (userRepository.existsByEmail(username)) {
             throw new DuplicatedUsernameException();
         }

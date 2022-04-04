@@ -1,4 +1,4 @@
-package exception;
+package io.taxventures.exception;
 
 public class ApplicationException extends Exception {
 

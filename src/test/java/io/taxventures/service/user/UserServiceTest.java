@@ -1,6 +1,6 @@
 package io.taxventures.service.user;
 
-import exception.DuplicatedUsernameException;
+import io.taxventures.exception.DuplicatedUsernameException;
 import io.taxventures.repository.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
